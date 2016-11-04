@@ -1,19 +1,14 @@
 
 <script src="jwplayer.js"></script>
 <script>jwplayer.key="mplzM3GKCrk3oDFmKJUWlYYv5UwUduRakjNjdQ==";</script>
-<div id="mediaspace2">This text will be replaced</div>
-
-
-
-
+<div id="mediaspace">This text will be replaced</div>
 <script>
-jwplayer("mediaspace2").setup({
-	flashplayer: 'jwplayer.flash.swf',
-	streamer: 'rtmp://78.129.184.15:29162/streaming',
-	file: 'sample.flv',
-	height: 270,
-	width: 480
-});
+	var so = new SWFObject('player.swf','mpl','470','290','9');
+	so.addParam('allowfullscreen','true');
+	so.addParam('allowscriptaccess','always');
+	so.addParam('wmode','opaque');
+	so.addVariable('file','livestream.flv');
+	so.addVariable('autostart','true');
+	so.addVariable('streamer','rtmp://78.129.184.15:29162/streaming');
+	so.write('mediaspace');
 </script>
-
-
